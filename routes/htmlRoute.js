@@ -1,8 +1,6 @@
 // Dependencies
 const path = require("path");
 
-// Routing
-
 module.exports = function (app) {
   // HTML GET Requests
   // app.get/notes, if there is a request.. this is our response

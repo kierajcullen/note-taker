@@ -47,7 +47,7 @@ module.exports = function (app) {
     // filter data to get notes except the one to delete
     const newData = data.filter((note) => note.id.toString() !== noteId);
 
-    // Write new data to 'db.json' file
+    // Write new data to json file
     fs.writeFileSync("./Develop/db/db.json", JSON.stringify(newData));
 
     console.log(`\nSuccessfully deleted note with id : ${noteId}`);
