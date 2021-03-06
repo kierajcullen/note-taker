@@ -5,8 +5,6 @@ const path = require("path");
 
 module.exports = function (app) {
   // HTML GET Requests
-  // Below code handles when users 'visit' a page.
-  // In each of the below cases the user is shown an HTML page of content
   // app.get/notes, if there is a request.. this is our response
   app.get("/notes", function (request, response) {
     // .. in routes folder
