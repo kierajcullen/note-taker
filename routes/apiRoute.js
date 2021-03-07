@@ -18,21 +18,16 @@ module.exports = function (app) {
   app.post("/api/notes", (request, response) => {
     // Extracted new note from request body.
     const newNote = request.body;
-
     console.log("\n\nPOST request - New Note : " + JSON.stringify(newNote));
-
     // Read data from 'db.json' file
     // let data = JSON.parse(fs.readFileSync("./Develop/db/db.json", "utf8"));
     console.log(data);
     // Pushed new note in notes file 'db.json'
     // do not need to writefilesync with this function .push
     data.push(newNote);
-
     // Written notes data to 'db.json' file
     fs.writeFileSync("./Develop/db/db.json", JSON.stringify(data));
-
     console.log("\nSuccessfully added new note to 'db.json' file!");
-
     // Send response
     response.json(data);
   });
@@ -50,13 +45,13 @@ module.exports = function (app) {
     // filter data to get notes except the one to delete
     // save newData back to data
     data = data.filter((note) => note.id.toString() !== noteId);
-
     // Write new data to json file
     fs.writeFileSync("./Develop/db/db.json", JSON.stringify(data));
-
     console.log(`\nSuccessfully deleted note with id : ${noteId}`);
-
     // Send response
     response.json(data);
   });
 };
+
+// deploy to heroku, supports many different languages
+// best part, it's free
